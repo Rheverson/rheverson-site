@@ -52,7 +52,7 @@ export const copy = {
           pt: "Construo sistemas sobre o ERP: o SAP continua sendo o registro, e as pessoas trabalham onde é mais simples.",
           en: "I build systems on top of the ERP: SAP stays the record, and people work where it's simpler.",
         },
-        fact: { pt: "R$ 20.160 em licenças SAP economizados", en: "R$ 20,160 saved in SAP licenses" },
+        fact: { pt: "R$ 20.160 por ano em licenças SAP", en: "R$ 20,160 a year in SAP licenses" },
         href: "/work/portal-operacoes-sap",
       },
       {
@@ -212,8 +212,8 @@ export const copy = {
     },
     licenseTitle: { pt: "Licenças que deixaram de ser necessárias", en: "Licenses no longer needed" },
     licenseBody: {
-      pt: "As solicitações de compra passaram a ser feitas no portal de operações e lançadas no SAP pelo Service Layer. Quem só solicitava deixou de precisar de licença do ERP.",
-      en: "Purchase requests moved to the operations portal and are posted to SAP through the Service Layer. People who only filed requests no longer needed an ERP license.",
+      pt: "Quatro contas passaram a trabalhar apenas pelo portal de operações: as solicitações de compra são criadas ali e lançadas no SAP pelo Service Layer, sem contratar licença do ERP. Somam-se a isso as ferramentas de PCP e logística, que reduziram o tempo gasto em controles manuais.",
+      en: "Four accounts now work through the operations portal only: purchase requests are created there and posted to SAP via the Service Layer, with no ERP license purchased. On top of that, the production planning and logistics tools cut the time spent on manual controls.",
     },
     modelTitle: { pt: "Um modelo medido contra o óbvio", en: "A model measured against the obvious" },
     modelBody: {

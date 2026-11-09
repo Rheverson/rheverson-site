@@ -26,7 +26,7 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
   const cv = `/cv/rheverson-urbiche-cv-${locale}.pdf`;
 
   const numbers = [
-    { value: locale === "pt" ? "R$ 20.160" : "R$ 20,160", label: { pt: "em licenças SAP economizados com o portal", en: "saved in SAP licenses through the portal" } },
+    { value: locale === "pt" ? "R$ 20.160" : "R$ 20,160", label: { pt: "por ano em licenças SAP, com 4 contas usando só o portal", en: "a year in SAP licenses, with 4 accounts using only the portal" } },
     { value: locale === "pt" ? "4,2×" : "4.2×", label: { pt: "de lift na fila de propensão de compra", en: "lift on the purchase-propensity queue" } },
     { value: String(totalCommits()), label: { pt: "commits em 2026 nos projetos apresentados", en: "commits in 2026 across featured projects" } },
     { value: "18", label: { pt: "módulos no portal integrado ao SAP B1", en: "apps in the SAP B1-integrated portal" } },

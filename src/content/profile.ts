@@ -23,7 +23,7 @@ export const experience: Role[] = [
     items: [
       { pt: "Administração e suporte aos processos do SAP Business One, com consultas SQL e relatórios para a tomada de decisão.", en: "Administer and support SAP Business One processes, with SQL queries and reports for decision-making." },
       { pt: "Dashboards e indicadores em Power BI (Power Query, modelagem e DAX) para a gestão e a diretoria.", en: "Power BI dashboards and KPIs (Power Query, modeling and DAX) for management and leadership." },
-      { pt: "Portal interno de operações integrado ao SAP B1: 18 módulos, leitura no HANA e escrita pelo Service Layer.", en: "Internal operations portal integrated with SAP B1: 18 apps, reads from HANA and writes through the Service Layer." },
+      { pt: "Portal interno de operações integrado ao SAP B1 (18 módulos, incluindo PCP e logística): 4 contas passaram a usar só o portal, economizando R$ 20.160 por ano em licenças SAP.", en: "Internal operations portal integrated with SAP B1 (18 apps, including production planning and logistics): 4 accounts now use only the portal, saving R$ 20,160 a year in SAP licenses." },
       { pt: "Pipeline SAP HANA → Databricks e modelo de propensão de compra com auditoria de vazamento.", en: "SAP HANA → Databricks pipeline and a purchase-propensity model with a leakage audit." },
       { pt: "Controles internos e automação de rotinas manuais a partir do levantamento de requisitos com as áreas.", en: "Internal controls and automation of manual routines, based on requirements gathered with each department." },
     ],

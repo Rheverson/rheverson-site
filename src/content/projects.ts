@@ -144,8 +144,8 @@ export const projects: Project[] = [
     period: "2026",
     featured: true,
     tagline: {
-      pt: "Um portal Django sobre o SAP Business One que tirou rotinas do ERP e economizou R$ 20.160 em licenças.",
-      en: "A Django portal on top of SAP Business One that moved routines out of the ERP and saved R$ 20,160 in licenses.",
+      pt: "Um portal Django sobre o SAP Business One que tirou rotinas do ERP e economiza R$ 20.160 por ano em licenças.",
+      en: "A Django portal on top of SAP Business One that moved routines out of the ERP and saves R$ 20,160 a year in licenses.",
     },
     domain: { pt: "Sistemas corporativos e integração com ERP", en: "Enterprise systems and ERP integration" },
     role: {
@@ -189,6 +189,10 @@ export const projects: Project[] = [
         en: "Purchase requests with attachments created in the portal and posted to SAP through the Service Layer — no SAP license needed by the requester.",
       },
       {
+        pt: "Ferramentas de PCP e de logística — planejamento da produção, acompanhamento de pedidos e fretes — que reduziram o tempo gasto em controles manuais.",
+        en: "Production planning (PCP) and logistics tools — production scheduling, order tracking and freight — that cut the time spent on manual controls.",
+      },
+      {
         pt: "Relatórios de status de pedidos e OTIF lidos de views do SAP, régua de cobrança com acordos conferidos contra os saldos do ERP.",
         en: "Order status and OTIF reports read from SAP views, plus a collections schedule with agreements checked against ERP balances.",
       },
@@ -209,10 +213,10 @@ export const projects: Project[] = [
       ],
     },
     results: [
-      { value: "R$ 20.160", label: { pt: "Economizados em licenças SAP com solicitações de compra feitas no portal", en: "Saved in SAP licenses by moving purchase requests to the portal" }, source: "Informado pelo autor" },
+      { value: "R$ 20.160", label: { pt: "Economizados por ano em licenças SAP: 4 contas trabalham só pelo portal", en: "Saved per year in SAP licenses: 4 accounts work through the portal only" }, source: "Informado pelo autor" },
+      { value: "4", label: { pt: "Licenças SAP que deixaram de ser contratadas", en: "SAP licenses no longer purchased" }, source: "Informado pelo autor" },
       { value: "18", label: { pt: "Módulos em um só sistema interno", en: "Modules in a single internal system" }, source: "docs/ARQUITETURA.md" },
       { value: "~90", label: { pt: "Telas para operação, gestão e diretoria", en: "Screens for operations, management and leadership" }, source: "docs/ARQUITETURA.md" },
-      { value: "~43 mil", label: { pt: "Linhas de Python, sem contar migrations", en: "Lines of Python, excluding migrations" }, source: "docs/ARQUITETURA.md" },
     ],
     links: [],
     note: {

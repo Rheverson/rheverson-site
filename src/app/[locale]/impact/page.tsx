@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/impact">
 const delivered: { what: L; detail: L; slug: string; href?: string }[] = [
   {
     what: { pt: "Portal de operações sobre o SAP B1", en: "Operations portal on SAP B1" },
-    detail: { pt: "18 módulos em uso interno, leitura no HANA e escrita pelo Service Layer", en: "18 apps in internal use, reads from HANA and writes via the Service Layer" },
+    detail: { pt: "18 módulos em uso interno, PCP e logística, leitura no HANA e escrita pelo Service Layer", en: "18 apps in internal use, production planning and logistics, reads from HANA and writes via the Service Layer" },
     slug: "portal-operacoes-sap",
   },
   {
@@ -84,6 +84,7 @@ export default async function ImpactPage({ params }: PageProps<"/[locale]/impact
           <div className="grid gap-10 border-t border-steel pt-10 md:grid-cols-12">
             <div className="md:col-span-7">
               <LedNumber value={locale === "pt" ? "R$ 20.160" : "R$ 20,160"} className="num block text-[clamp(4.5rem,13vw,11.5rem)] text-signal" />
+              <p className="display display-s mt-3 text-mist">{locale === "pt" ? "por ano, 4 licenças SAP" : "per year, 4 SAP licenses"}</p>
             </div>
             <div className="md:col-span-5">
               <h2 id="license-h" data-r className="display display-s text-frost">
