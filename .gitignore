@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# playwright
+/test-results/
+/playwright-report/
+/blob-report/
+
+# claude code (skills são restauradas a partir de skills-lock.json)
+/.claude/skills/
+/.claude/settings.local.json
