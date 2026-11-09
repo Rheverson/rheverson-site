@@ -1,5 +1,5 @@
 import { ogImage, ogSize } from "@/lib/og";
-import { getProject, kindLabel } from "@/content/projects";
+import { getProject, kindLabel, projectName } from "@/content/projects";
 import { isLocale } from "@/content/types";
 
 export const size = ogSize;
@@ -12,7 +12,7 @@ export default async function Image({ params }: { params: Promise<{ locale: stri
   const p = getProject(slug);
   return ogImage({
     eyebrow: p ? `${locale === "pt" ? "Estudo de caso" : "Case study"} — ${kindLabel[p.kind][locale]}` : "Rheverson Urbiche",
-    title: p?.name ?? "Rheverson Urbiche",
+    title: p ? projectName(p, locale) : "Rheverson Urbiche",
     subtitle: p?.tagline[locale] ?? "",
   });
 }

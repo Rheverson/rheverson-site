@@ -16,6 +16,8 @@ export type ProjectLink = { label: L; href: string };
 export type Project = {
   slug: string;
   name: string;
+  /** Nome em inglês, quando o nome do projeto não é uma marca. */
+  nameEn?: string;
   kind: ProjectKind;
   period: string;
   /** Frase curta de uma linha usada na listagem. */
@@ -44,6 +46,7 @@ export const projects: Project[] = [
   {
     slug: "propensao-compra",
     name: "Propensão de compra",
+    nameEn: "Purchase propensity",
     kind: "professional",
     period: "2026",
     featured: true,
@@ -136,6 +139,7 @@ export const projects: Project[] = [
   {
     slug: "portal-operacoes-sap",
     name: "Portal de operações",
+    nameEn: "Operations portal",
     kind: "professional",
     period: "2026",
     featured: true,
@@ -518,3 +522,11 @@ export const projects: Project[] = [
 ];
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
+
+export const projectName = (p: Pick<Project, "name" | "nameEn">, locale: "pt" | "en") =>
+  locale === "en" && p.nameEn ? p.nameEn : p.name;
+
+export const projectNameBySlug = (slug: string, locale: "pt" | "en") => {
+  const p = getProject(slug);
+  return p ? projectName(p, locale) : slug;
+};

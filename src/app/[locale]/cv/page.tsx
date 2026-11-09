@@ -1,6 +1,6 @@
 import { copy } from "@/content/copy";
 import { education, experience, languages, skillGroups } from "@/content/profile";
-import { projects } from "@/content/projects";
+import { projectName, projects } from "@/content/projects";
 import { site } from "@/content/site";
 import { resolveLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/seo";
@@ -93,7 +93,7 @@ export default async function CvPage({ params }: PageProps<"/[locale]/cv">) {
               const p = projects.find((x) => x.slug === slug)!;
               return (
                 <li key={slug} className="break-inside-avoid">
-                  <strong className="text-neutral-950">{p.name}</strong>
+                  <strong className="text-neutral-950">{projectName(p, locale)}</strong>
                   <span className="text-neutral-600"> — {p.tagline[locale]}</span>
                 </li>
               );

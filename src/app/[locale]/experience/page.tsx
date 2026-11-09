@@ -4,7 +4,7 @@ import { Lines } from "@/components/motion/Lines";
 import { InView } from "@/components/motion/InView";
 import { copy } from "@/content/copy";
 import { experience } from "@/content/profile";
-import { getProject } from "@/content/projects";
+import { projectNameBySlug } from "@/content/projects";
 import { resolveLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/seo";
 
@@ -63,7 +63,7 @@ export default async function ExperiencePage({ params }: PageProps<"/[locale]/ex
                     <span className="text-metal">{copy.experience.related[locale]}:</span>
                     {role.projects.map((slug) => (
                       <Link key={slug} href={`/${locale}/work/${slug}`} className="link-under text-mist">
-                        {getProject(slug)?.name}
+                        {projectNameBySlug(slug, locale)}
                       </Link>
                     ))}
                   </p>

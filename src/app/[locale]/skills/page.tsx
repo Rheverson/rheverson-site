@@ -4,7 +4,7 @@ import { Lines } from "@/components/motion/Lines";
 import { InView } from "@/components/motion/InView";
 import { copy } from "@/content/copy";
 import { skillGroups } from "@/content/profile";
-import { getProject } from "@/content/projects";
+import { projectNameBySlug } from "@/content/projects";
 import { resolveLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/seo";
 
@@ -63,7 +63,7 @@ export default async function SkillsPage({ params }: PageProps<"/[locale]/skills
                               <span key={slug}>
                                 {j > 0 && <span className="text-iron">, </span>}
                                 <Link href={`/${locale}/work/${slug}`} className="link-under text-metal">
-                                  {getProject(slug)?.name}
+                                  {projectNameBySlug(slug, locale)}
                                 </Link>
                               </span>
                             ))}

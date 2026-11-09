@@ -6,7 +6,7 @@ import { LedNumber } from "@/components/motion/LedNumber";
 import { AucSlope, CommitMatrix, LiftChart } from "@/components/viz/ImpactCharts";
 import { Icon } from "@/components/Icon";
 import { copy } from "@/content/copy";
-import { projects } from "@/content/projects";
+import { projectName, projects } from "@/content/projects";
 import type { L } from "@/content/types";
 import { commitMatrix, commitsCollectedAt, totalCommits } from "@/lib/commits";
 import { resolveLocale } from "@/lib/i18n";
@@ -64,7 +64,7 @@ export default async function ImpactPage({ params }: PageProps<"/[locale]/impact
   const locale = await resolveLocale(params);
   const t = copy.impact;
   const matrix = commitMatrix();
-  const names = Object.fromEntries(projects.map((p) => [p.slug, p.name]));
+  const names = Object.fromEntries(projects.map((p) => [p.slug, projectName(p, locale)]));
   const collected = new Date(`${commitsCollectedAt}T12:00:00Z`).toLocaleDateString(locale === "pt" ? "pt-BR" : "en-US", {
     day: "numeric",
     month: "long",

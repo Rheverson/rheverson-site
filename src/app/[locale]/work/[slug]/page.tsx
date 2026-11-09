@@ -9,7 +9,7 @@ import { Pipeline } from "@/components/viz/Pipeline";
 import { CaseNav } from "@/components/work/CaseNav";
 import { Icon } from "@/components/Icon";
 import { copy } from "@/content/copy";
-import { getProject, kindLabel, projects } from "@/content/projects";
+import { getProject, kindLabel, projectName, projects } from "@/content/projects";
 import { site } from "@/content/site";
 import { locales, type Locale } from "@/content/types";
 import { resolveLocale } from "@/lib/i18n";
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/work/[sl
   const locale = await resolveLocale(params);
   const p = getProject(slug);
   if (!p) return {};
-  return pageMetadata({ locale, path: `/work/${slug}`, title: { pt: p.name, en: p.name }, description: p.tagline });
+  return pageMetadata({ locale, path: `/work/${slug}`, title: { pt: p.name, en: projectName(p, "en") }, description: p.tagline });
 }
 
 /** Números no formato do idioma (vírgula ↔ ponto). */
@@ -61,7 +61,7 @@ export default async function CasePage({ params }: PageProps<"/[locale]/work/[sl
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    name: p.name,
+    name: projectName(p, locale),
     description: p.tagline[locale],
     url: `${site.url}/${locale}/work/${p.slug}`,
     inLanguage: locale === "pt" ? "pt-BR" : "en",
@@ -85,12 +85,12 @@ export default async function CasePage({ params }: PageProps<"/[locale]/work/[sl
               /
             </span>
             <span aria-current="page" className="text-mist">
-              {p.name}
+              {projectName(p, locale)}
             </span>
           </nav>
 
           <ViewTransition name={`case-title-${p.slug}`} share="morph" default="none">
-            <h1 className="display display-l mt-6 text-frost">{p.name}</h1>
+            <h1 className="display display-l mt-6 text-frost">{projectName(p, locale)}</h1>
           </ViewTransition>
           <p className="lede mt-8 max-w-[34ch] md:max-w-[42ch]">{p.tagline[locale]}</p>
 
@@ -269,7 +269,7 @@ export default async function CasePage({ params }: PageProps<"/[locale]/work/[sl
           >
             <span className="meta">{copy.work.next[locale]}</span>
             <span className="display display-l mt-3 flex items-end justify-between gap-6 text-frost transition-colors duration-500 group-hover:text-signal">
-              {next.name}
+              {projectName(next, locale)}
               <Icon name="arrow-right" size={56} className="mb-2 hidden h-[0.5em] w-[0.5em] shrink-0 transition-transform duration-500 group-hover:translate-x-3 sm:block" />
             </span>
           </Link>

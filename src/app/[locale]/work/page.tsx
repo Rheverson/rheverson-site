@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/work">) 
 
 export default async function WorkPage({ params }: PageProps<"/[locale]/work">) {
   const locale = await resolveLocale(params);
-  const items = projects.map(({ slug, name, kind, period, tagline, domain, images }) => ({ slug, name, kind, period, tagline, domain, images }));
+  const items = projects.map(({ slug, name, nameEn, kind, period, tagline, domain, images }) => ({ slug, name, nameEn, kind, period, tagline, domain, images }));
 
   return (
     <PageTransition>

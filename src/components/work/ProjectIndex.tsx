@@ -5,7 +5,7 @@ import Link from "next/link";
 import { startTransition, useRef, useState, useSyncExternalStore, ViewTransition } from "react";
 import { motion, useMotionValue, useReducedMotion, useSpring } from "motion/react";
 import type { Locale } from "@/content/types";
-import { kindLabel, type Project, type ProjectKind } from "@/content/projects";
+import { kindLabel, projectName, type Project, type ProjectKind } from "@/content/projects";
 import { copy } from "@/content/copy";
 
 const FINE = "(hover: hover) and (pointer: fine)";
@@ -16,7 +16,7 @@ const subscribePointer = (cb: () => void) => {
 };
 const getFinePointer = () => window.matchMedia(FINE).matches;
 
-type Item = Pick<Project, "slug" | "name" | "kind" | "period" | "tagline" | "domain" | "images">;
+type Item = Pick<Project, "slug" | "name" | "nameEn" | "kind" | "period" | "tagline" | "domain" | "images">;
 
 export function ProjectIndex({ items, locale, filter = false }: { items: Item[]; locale: Locale; filter?: boolean }) {
   const [kind, setKind] = useState<ProjectKind | "all">("all");
@@ -82,7 +82,7 @@ export function ProjectIndex({ items, locale, filter = false }: { items: Item[];
                 <span className="col-span-12 md:col-span-7">
                   <ViewTransition name={`case-title-${p.slug}`} share="morph" default="none">
                     <span className="display display-m block text-frost transition-[color,transform] duration-500 ease-out group-hover:translate-x-3 group-hover:text-signal">
-                      {p.name}
+                      {projectName(p, locale)}
                     </span>
                   </ViewTransition>
                 </span>
