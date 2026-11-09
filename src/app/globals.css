@@ -475,6 +475,10 @@ canvas {
 }
 
 @media print {
+  :root {
+    color-scheme: light;
+  }
+
   html,
   body {
     background: #fff !important;

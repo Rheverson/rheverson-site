@@ -10,6 +10,7 @@ mkdirSync(outDir, { recursive: true });
 
 const browser = await chromium.launch();
 const page = await browser.newPage();
+await page.emulateMedia({ media: "print", colorScheme: "light" });
 for (const locale of ["pt", "en"]) {
   await page.goto(`${base}/${locale}/cv`, { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);

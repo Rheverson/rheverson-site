@@ -35,7 +35,7 @@ export default async function CvPage({ params }: PageProps<"/[locale]/cv">) {
         </a>
       </div>
 
-      <article className="cv-sheet mx-auto max-w-[210mm] bg-white px-[14mm] py-[12mm] text-[9.6pt] leading-[1.42] text-neutral-800 shadow-2xl print:max-w-none print:shadow-none">
+      <article className="cv-sheet mx-auto max-w-[210mm] bg-white px-[14mm] py-[12mm] text-[9pt] leading-[1.38] text-neutral-800 shadow-2xl print:max-w-none print:shadow-none">
         <header className="flex items-end justify-between gap-6 border-b-2 border-neutral-900 pb-4">
           <div>
             <h1 className="display text-[34pt] leading-none text-neutral-950">{site.name}</h1>
@@ -52,7 +52,7 @@ export default async function CvPage({ params }: PageProps<"/[locale]/cv">) {
           </ul>
         </header>
 
-        <section className="mt-4">
+        <section className="mt-3">
           <h2 className="cv-h">{pt ? "Resumo" : "Summary"}</h2>
           <p>
             {pt
@@ -61,9 +61,9 @@ export default async function CvPage({ params }: PageProps<"/[locale]/cv">) {
           </p>
         </section>
 
-        <section className="mt-4">
+        <section className="mt-3">
           <h2 className="cv-h">{pt ? "Experiência" : "Experience"}</h2>
-          <ul className="space-y-3">
+          <ul className="space-y-2">
             {roles.map((r) => (
               <li key={`${r.company}-${r.period}`} className="break-inside-avoid">
                 <p className="flex justify-between gap-4">
@@ -86,7 +86,7 @@ export default async function CvPage({ params }: PageProps<"/[locale]/cv">) {
           </ul>
         </section>
 
-        <section className="mt-4">
+        <section className="mt-3">
           <h2 className="cv-h">{pt ? "Projetos selecionados" : "Selected projects"}</h2>
           <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
             {highlighted.map((slug) => {
@@ -101,7 +101,7 @@ export default async function CvPage({ params }: PageProps<"/[locale]/cv">) {
           </ul>
         </section>
 
-        <section className="mt-4">
+        <section className="mt-3">
           <h2 className="cv-h">{pt ? "Competências" : "Skills"}</h2>
           <dl className="grid grid-cols-[34mm_1fr] gap-x-4 gap-y-1">
             {skillGroups.map((g) => (
@@ -113,7 +113,7 @@ export default async function CvPage({ params }: PageProps<"/[locale]/cv">) {
           </dl>
         </section>
 
-        <div className="mt-4 grid grid-cols-[1fr_auto] gap-8">
+        <div className="mt-3 grid grid-cols-[1fr_auto] gap-8">
           <section>
             <h2 className="cv-h">{pt ? "Formação" : "Education"}</h2>
             <ul className="space-y-0.5">
