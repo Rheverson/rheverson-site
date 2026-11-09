@@ -71,11 +71,11 @@ export function SiteHeader({ locale }: { locale: Locale }) {
           <Link
             href={`/${locale}`}
             onClick={() => setOpen(false)}
-            className="group flex items-center gap-3 text-frost"
+            className="group flex min-w-0 items-center gap-2.5 text-frost"
             aria-label={`Rheverson Urbiche — ${copy.common.home[locale]}`}
           >
             <Monogram size={18} className="text-signal transition-transform duration-500 group-hover:scale-110" />
-            <span className="text-[0.95rem] font-semibold tracking-tight">Rheverson Urbiche</span>
+            <span className="whitespace-nowrap text-[0.9rem] font-semibold tracking-tight sm:text-[0.95rem]">Rheverson Urbiche</span>
           </Link>
 
           <nav aria-label={locale === "pt" ? "Principal" : "Main"} className="hidden lg:block">
